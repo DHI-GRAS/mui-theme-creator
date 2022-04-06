@@ -6,7 +6,7 @@
   "author": "Brian Reynolds <brireyn@gmail.com>",
   "dependencies": {
     "@loadable/component": "^5.13.1",
-    "@material-ui/core": "^4.11.0",
+    "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@types/recharts": "^1.8.14",
@@ -59,7 +59,7 @@
   "scripts": {
     "build": "./extractMuiVersion.sh && gatsby build",
     "develop": "gatsby develop",
-    "deploy": "./extractMuiVersion.sh && gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "./extractMuiVersion.sh && gatsby build --prefix-paths",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

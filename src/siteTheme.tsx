@@ -5,19 +5,11 @@ import {
   PaletteType,
 } from "@material-ui/core"
 
-export const defaultThemeOptions: ThemeOptions = {
-  palette: {
-    type: "light" as PaletteType,
-    primary: {
-      main: "#3f51b5", // the default primary color
-    },
-    secondary: {
-      main: "#f50057", // the default secondary color
-    },
-  },
-}
+import mikeSharedTheme from "./components/ThemeProvider/mikeSharedTheme"
 
-export const defaultTheme: Theme = createMuiTheme()
+export const defaultThemeOptions: ThemeOptions = mikeSharedTheme
+
+export const defaultTheme: Theme = mikeSharedTheme
 
 export const themeConfig: ThemeOptions = {
   palette: {
