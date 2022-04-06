@@ -12,6 +12,12 @@ const paletteColorTypes = [
   "success",
 ]
 
+const dhiGreyShades = [
+  "lightGrey",
+  "mediumGrey",
+  "darkGrey"
+]
+
 export default function PaletteTools() {
   return (
     <>
@@ -21,14 +27,6 @@ export default function PaletteTools() {
           <ThemeTypeInput />
         </AccordionSummary>
       </Accordion>
-      <PaletteSubType
-        title="Background"
-        path="palette.background"
-        paletteValues={[
-          ["Default", "default"],
-          ["Paper", "paper"],
-        ]}
-      />
       <PaletteSubType
         title="Text"
         path="palette.text"
@@ -52,6 +50,27 @@ export default function PaletteTools() {
           ]}
         />
       ))}
+      {dhiGreyShades.map(colorType => (
+        <PaletteSubType
+          key={colorType}
+          title={colorType}
+          path={`palette.${colorType}`}
+          paletteValues={[
+            ["Main", `main`],
+            ["Light", `light`],
+            ["Dark", `dark`],
+            ["Contrast Text", `contrastText`],
+          ]}
+        />
+      ))}
+      <PaletteSubType
+        title="Background"
+        path="palette.background"
+        paletteValues={[
+          ["Default", "default"],
+          ["Paper", "paper"],
+        ]}
+      />
       <PaletteSubType
         title="Divider"
         path="palette"

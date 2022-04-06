@@ -13,6 +13,6 @@ export const mikeSharedTheme: IMikeTheme = createTheme({
   typography: mikeTypography,
   overrides: mikeOverrides,
   props: mikeComponentsProps,
-} as IMikeThemeOptions);
+} as any);
 
 export default mikeSharedTheme;

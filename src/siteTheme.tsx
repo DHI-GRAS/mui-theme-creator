@@ -1,5 +1,5 @@
 import {
-  createMuiTheme,
+  createTheme,
   ThemeOptions,
   Theme,
   PaletteType,
@@ -7,9 +7,11 @@ import {
 
 import mikeSharedTheme from "./components/ThemeProvider/mikeSharedTheme"
 
-export const defaultThemeOptions: ThemeOptions = mikeSharedTheme
+const {breakpoints, ...restOfTheme } = mikeSharedTheme
 
-export const defaultTheme: Theme = mikeSharedTheme
+export const defaultThemeOptions: ThemeOptions = restOfTheme
+
+export const defaultTheme: Theme = createTheme()
 
 export const themeConfig: ThemeOptions = {
   palette: {
@@ -86,4 +88,4 @@ export const themeConfig: ThemeOptions = {
   },
 }
 
-export default createMuiTheme(themeConfig)
+export default createTheme(themeConfig)

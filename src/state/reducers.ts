@@ -284,20 +284,17 @@ const createPreviewMuiTheme = (
   themeOptions: ThemeOptions,
   previewSize: PreviewSize
 ) => {
-  const spoofedBreakpoints: Record<string, BreakpointValues> = {
-    xs: { xs: 0, sm: 10000, md: 10001, lg: 10002, xl: 10003 },
-    sm: { xs: 0, sm: 1, md: 10001, lg: 10002, xl: 10003 },
-    md: { xs: 0, sm: 1, md: 2, lg: 10002, xl: 10003 },
-    lg: { xs: 0, sm: 1, md: 2, lg: 3, xl: 10003 },
-    xl: { xs: 0, sm: 1, md: 2, lg: 3, xl: 4 },
-  }
+  // const spoofedBreakpoints: Record<string, BreakpointValues> = {
+  //   xs: { xs: 0, sm: 10000, md: 10001, lg: 10002, xl: 10003 },
+  //   sm: { xs: 0, sm: 1, md: 10001, lg: 10002, xl: 10003 },
+  //   md: { xs: 0, sm: 1, md: 2, lg: 10002, xl: 10003 },
+  //   lg: { xs: 0, sm: 1, md: 2, lg: 3, xl: 10003 },
+  //   xl: { xs: 0, sm: 1, md: 2, lg: 3, xl: 4 },
+  // }
 
   if (!previewSize) return createMuiTheme(themeOptions)
 
   return createMuiTheme(
-    deepmerge(
-      { breakpoints: { values: spoofedBreakpoints[previewSize] } },
-      themeOptions
-    )
+    themeOptions
   )
 }

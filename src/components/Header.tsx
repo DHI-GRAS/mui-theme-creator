@@ -7,6 +7,7 @@ import {
   makeStyles,
   Link,
   IconButton,
+  Button
 } from "@material-ui/core"
 import muiVersion from "src/muiVersion"
 import TutorialButton from "./Tutorial/TutorialButton"
@@ -30,6 +31,12 @@ const useStyles = makeStyles(theme => ({
 
 const Header = ({ className }) => {
   const classes = useStyles()
+
+  const handleResetLocalStorage = () => {
+    localStorage.clear()
+    window.location.reload()
+  }
+
   return (
     <AppBar position="static" color="default" className={className}>
       <Toolbar className={classes.toolbar}>
@@ -47,6 +54,9 @@ const Header = ({ className }) => {
               {`@material-ui/core@${muiVersion}`}
             </Link>
           </Typography>
+        </div>
+        <div>
+          <Button variant="outlined" onClick={handleResetLocalStorage}>Reset local storage</Button>
         </div>
         <div>
           <TutorialButton />
